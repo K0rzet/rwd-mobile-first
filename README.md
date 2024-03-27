@@ -1,4 +1,5 @@
-# lab6
+# rwd, ally, promise, animations
+## link - http://rwd.std-2131.ist.mospolytech.ru/
 ```
 Добавлен skip-link
 Проверен tab order
