@@ -1,0 +1,48 @@
+.navigation {
+    display: none;
+    position: relative;
+    @include media(1200px) {
+        display: block;
+        margin-left: 100px;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        @include media(1200px) {
+            align-items: center;
+            flex-direction: row;
+            gap: 24px;
+
+        }
+    }
+
+    &__link {
+        font-family: 'poppins-400';
+        font-size: 18px;
+        line-height: 24px;
+        color: $title;
+        text-decoration: none;
+        &--signup {
+            background-color: $primary;
+            border-radius: 34px;
+            color: $white;
+            box-sizing: border-box;
+            padding: 8px 16px;
+            @include media(1200px) {
+                padding: 16px 32px;
+                max-width: 100%;
+            }
+    
+        }
+        &--login {
+            color: $primary;
+            display: inline-block;
+            @include media(1400px) {
+                margin-left: 100px;
+            }
+        }
+    }
+}

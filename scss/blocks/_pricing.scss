@@ -1,0 +1,221 @@
+@import '../utils/variables';
+@import '../utils/fonts';
+
+.pricing {
+  position: relative;
+  @include media(1200px) {
+    &::before {
+      position: absolute;
+      content: '';
+      background-image: url('../../img/3d-hand.png');
+      left: -100px;
+      bottom: 0;
+      width: 250px;
+      height: 250px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      transform: rotate(15deg);
+    }
+  }
+  &__label {
+    font-family: 'poppins-500';
+    font-weight: 500;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-top: 16px;
+  }
+
+  &__wrapper {
+    max-width: 327px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1%;
+    box-sizing: border-box;
+    @include media(576px) {
+      max-width: 100%;
+      font-size: 18px;
+  }
+    @include media(1200px) {
+      max-width: 970px;
+    }
+  }
+
+  &__title {
+    text-align: center;
+    @include title;
+    @include media(576px) {
+      max-width: 100%;
+      padding: 0 20px;
+      text-align: center;
+      font-size: 36px;
+  }
+    @include media(1200px) {
+      font-size: 48px;
+      max-width: 638px;
+    }
+  }
+
+  &__subtitle {
+    color: $text;
+    display: inline-block;
+    margin-top: 10px;
+    line-height: 36px;
+    font-family: 'inter-400';
+    text-align: center;
+    @include media(576px) {
+      max-width: 100%;
+      padding: 0 20px;
+      font-size: 18px;
+      text-align: center;
+      text-align-last: auto;
+  }
+    @include media(1200px)  {
+      font-size: 18px;
+    }
+  }
+  &__switch-text {
+    font-family: 'poppins-600';
+    @include media(1200px) {
+      font-size: 24px;
+    }
+  }
+  &__input {
+    position: relative;
+    width: 55px;
+    height: 26px;
+    -webkit-appearance: none;
+    outline: none;
+    background: $switch;
+    border-radius: 20px;
+    transition: .5s;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, .2);
+  }
+
+  &__input:checked {
+    background: $orange;
+  }
+
+  &__input:before {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border-radius: 20px;
+    top: 50%;
+    left: 15px;
+    transform: translate(-50%, -50%);
+    background: $white;
+    transition: .5s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+  }
+
+  &__input:checked:before {
+    left: 40px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    margin-top: 40px;
+    width: 100%;
+    @include media(576px) {
+      flex-direction: row;
+      justify-content: center;
+
+      max-width: 100%;
+      font-size: 18px;
+  }
+
+  }
+
+  &__block {
+    max-width: 100%;
+    border: 1px solid $primary;
+    border-radius: 30px;
+    background-color: transparent;
+    padding: 36px 26px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    @include media(1200px) {
+      max-width: 470px;
+      border-radius: 70px;
+      padding: 64px 132px;
+    }
+    &--orange {
+      background-color: $primary;
+      color: $white;
+      position: relative;
+
+      @include media(1200px) {
+        &::before {
+          position: absolute;
+          content: '';
+          background-image: url('../../img/sand-watch.png');
+          background-repeat: no-repeat;
+          width: 150px;
+          height: 193px;
+          background-size: contain;
+          z-index: -10;
+          left: 80%;
+          top: -15%;
+
+        }
+      }
+    }
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'inter-700';
+    font-size: 20px;
+    gap: 10px;
+    @include media(1200px) {
+      flex-direction: column;
+      align-items: center;
+      font-size: 48px;
+    }
+  }
+  &__price {
+    font-size: 18px;
+  }
+
+  &__features-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    color: $primary;
+    margin-top: 25px;
+    font-size: 18px;
+    @include media(1200px) {
+      font-size: 28px;
+      text-align: center;
+      margin-top: 56px;
+      gap: 20px;
+    }
+    &--orange {
+      color: $white;
+    }
+  }
+
+  &__button {
+    margin-top: 30px;
+    height: 76px;
+    align-self: center;
+    max-width: 240px;
+    @include media(1200px) {
+      margin-top: 60px;
+    }
+
+    &--orange {
+      background-color: $white;
+      color: $primary;
+      border: none;
+    }
+  }
+}

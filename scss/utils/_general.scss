@@ -1,0 +1,32 @@
+@import 'variables';
+@import 'fonts';
+@import 'mixin';
+html {
+    font-size: 16px;
+    @include media(1200px) {
+        font-size: 18px;
+    }
+}
+main {
+    position: relative;
+}
+.skiplink {
+    position: absolute;
+    left: -9999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    z-index: -1;
+
+    &:focus {
+        position: static;
+        width: auto;
+        height: auto;
+        overflow: visible;
+        z-index: 1;
+        background-color: #000;
+        color: #fff;
+        padding: 5px;
+    }
+}

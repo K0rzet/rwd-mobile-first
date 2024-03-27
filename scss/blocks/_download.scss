@@ -1,0 +1,152 @@
+.download {
+    background-color: $background;
+    padding: 48px 0 0 0;
+    position: relative;
+    overflow: hidden;
+    @include media(1920px) {
+        &::before {
+            position: absolute;
+            content: '';
+            background-image: url('../../img/download-hand1.png');
+            background-size: contain;
+            transform: rotate(30deg);
+            top: 88px;
+            left: -50px;
+            width: 398px;
+            height: 156px;
+            background-repeat: no-repeat;
+        }
+        &::after {
+            position: absolute;
+            content: '';
+            background-image: url('../../img/download-hand2.png');
+            background-size: contain;
+            top: 290px;
+            right: -15%;
+            width: 632px;
+            height: 218px;
+            background-repeat: no-repeat;
+        }
+    }
+
+    &__wrapper {
+        max-width: 327px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 48px;
+        padding-bottom: 20px;
+        @include media(576px) {
+            max-width: 1000px;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0;
+        }
+        @include media(1200px) {
+            max-width: 1200px;
+            padding-bottom: 0;
+        }
+
+        @include media(1920px) {
+            max-width: 1050px;
+        }
+        &--device-width {
+            width: 100%;
+            overflow: hidden;
+        }
+    }
+
+    &__text {
+        font-family: 'inter-400';
+        line-height: 30px;
+        color: $text;
+        opacity: 0.8;
+        margin-top: 16px;
+        @include media(576px) {
+            max-width: 100%;
+            padding: 0 20px;
+            font-size: 18px;
+            text-align: center;
+            text-align-last: auto;
+        }
+        @include media(1200px) {
+            max-width: 529px;
+            text-align: left;
+        }
+    }
+
+    &__title {
+        @include title;
+        @include media(576px) {
+            max-width: 100%;
+            padding: 0 20px;
+            text-align: center;
+            font-size: 36px;
+        }
+        @include media(1200px) {
+            font-size: 48px;
+            text-align: left;
+        }
+    }
+    &__content {
+        display: flex;
+        flex-direction: column;
+        @include media(576px) {
+            align-items: center;
+        }
+        @include media(1200px) {
+            display: block;
+        }
+    }
+    &__links {
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        max-width: 200px;
+        
+        @include media(1200px) {
+            flex-direction: row;
+        }
+    }
+
+    &__link {
+        max-width: fit-content;
+        padding: 24px 40px;
+        background-color: $primary;
+        border-radius: 40px;
+        display: flex;
+        align-items: center;
+        
+        
+
+        &--selected {
+            position: relative;
+            &::after {
+                position: absolute;
+                content: '';
+                background-image: url('../../img/download-dec.png');
+                top: 5px;
+                right: -120%;
+                height: 60px;
+                width: 176px;
+                @include media(1200px) {
+                    display: none;
+                }
+            }
+        }
+
+        &--transparent {
+            background-color: transparent;
+            border: 1px solid $primary;
+        }
+    }
+    &__phone {
+        display: none;
+        @include media(1200px) {
+            display: block;
+        }
+    }
+
+}

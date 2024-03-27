@@ -1,0 +1,4 @@
+@function fz($base-font-size, $max-font-size) {
+    $font-size: calc($base-font-size + ($max-font-size - $base-font-size) * ((100vw - 320px) / (1920px - 320px)));
+    @return $font-size; 
+}

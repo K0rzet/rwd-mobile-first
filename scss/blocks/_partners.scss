@@ -1,0 +1,170 @@
+.partners {
+    &__wrapper {
+        max-width: 323px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        margin-top: 80px;
+        align-items: center;
+        @include media(576px) {
+            max-width: 100%;
+            padding: 0 20px;
+        }
+        @include media(768px) {
+            max-width: 1100px;
+            flex-direction: row-reverse;
+            gap: 100px;
+            justify-content: flex-end;
+            align-items: center;
+
+        }
+        @include media(1400px) {
+            max-width: 1300px;
+        }
+        @include media(1920px) {
+            max-width: 1768px;
+        }
+    }
+    &__content {
+        @include media(576px) {
+            max-width: 100%;
+            padding: 0 20px;
+            font-size: 18px;
+            text-align: center;
+            text-align-last: auto;
+        }
+        @include media(768px) {
+            max-width: 525px;
+            text-align: start;
+            text-align-last: auto;
+        }
+    }
+    &__title {
+        max-width: 250px;
+        @include title;
+        @include media(576px) {
+            max-width: 100%;
+            padding: 0 20px;
+            text-align: center;
+            font-size: 36px;
+        }
+        @include media(768px) {
+            font-size: 48px;
+            max-width: 525px;
+            text-align: start;
+        }
+    }
+
+    &__text {
+        font-family: 'inter-400';
+        line-height: 180%;
+        @include media(576px) {
+            max-width: 100%;
+            padding: 0 20px;
+            font-size: 18px;
+            text-align: center;
+            text-align-last: auto;
+        }
+        @include media(768px) {
+            font-size: 18px;
+            text-align: start;
+
+        }
+        @include media(1400px) {
+            margin-top: 24px;
+        }
+    }
+
+    &__button {
+        border: 1px solid $primary;
+        border-radius: 40px;
+        color: $primary;
+        background-color: transparent;
+        font-family: 'poppins-600';
+        padding: 24px 40px;
+        max-width: fit-content;
+        margin-top: 28px;
+    }
+    &__images {
+        margin-top: 40px;
+        display: grid;
+        grid-template-columns: min-content min-content;
+        gap: 16px;
+        width: fit-content;
+        
+        @include media(1200px) {
+            margin-top: 0;
+            height: fit-content;
+        }
+        @include media(1400px) {
+            grid-template-columns: max-content max-content 56px max-content min-content; 
+            grid-template-rows: min-content min-content 52px min-content min-content min-content 52px min-content min-content; 
+            gap: 0px 0px; 
+            grid-template-areas: 
+              ". second . . ."
+              ". second . third ."
+              ". . . third ."
+              "first first . third ."
+              "first first . . ."
+              "first first . fourth fourth"
+              ". . . fourth fourth"
+              ". fifth . fourth fourth"
+              ". fifth . . ."; 
+        }
+    }
+    &__picture {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 15px;
+        box-sizing: border-box;
+        overflow: hidden;
+        @include media(1400px) {
+            border-radius: 54px;
+            
+        }
+        &:nth-child(1) {
+            background-color: $partners-ico1-mobile;
+            @include media(1400px) {
+                background-color: $partners-ico1-pc;
+                grid-area: first;
+                height: fit-content;
+            }
+        }
+        &:nth-child(2) {
+            background-color: $partners-ico2-mobile;
+            @include media(1400px) {
+                grid-area: second;
+            }
+        }
+        &:nth-child(3) {
+            background-color: $partners-ico3-mobile;
+            @include media(1400px) {
+                grid-area: third;
+            }
+        }
+        &:nth-child(4) {
+            background-color: $partners-ico4-mobile;
+            @include media(1400px) {
+                grid-area: fourth;
+            }
+        }
+        &:nth-child(5) {
+            background-color: $partners-ico4-mobile;
+            display: none;
+            @include media(1400px) {
+                display: block;
+                grid-area: fifth;
+            }
+        }
+    }
+    &__image {
+        box-sizing: border-box;
+        padding: 28px;
+        @include media(1400px) {
+            padding: 0;
+            overflow: hidden;
+        }
+    }
+}
